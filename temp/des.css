@@ -1,0 +1,54 @@
+body{
+    color:black;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url('https://thumbs.dreamstime.com/b/creative-fashion-concept-flat-lay-top-view-colored-wooden-hangers-pink-blue-background-minimalism-style-pop-art-sale-discount-152394247.jpg');
+    background-size: 50%
+      
+}
+a{
+    text-decoration: none;
+}
+a:visited{
+    color: green;
+}
+
+.c2 li{
+   color:violet;
+   padding-bottom: 5px;
+}
+
+.topright{
+    position: absolute;
+    top: 8px;
+    right: 16px;
+}
+.f1{
+    display: flex;
+    text-align: center;
+    margin: auto;
+    padding-top: 5px  ;
+
+}
+
+.cart{
+    display: flex;
+    flex: 0.75;
+}
+
+.product{
+    padding: 0%;
+    width: 500px;
+    height: 300px;
+    border: 1px silver solid ;
+}
+
+.product:hover{
+
+	border: none;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    transform: scale(1.01);
+
+}
+
+

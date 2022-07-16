@@ -1,0 +1,356 @@
+.navbar{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+nav{
+    flex: 1;
+    text-align: right;
+}
+
+nav ul{
+    display: inline-block;
+    list-style: none;
+}
+
+nav ul li{
+    display: inline-block;
+    margin-right: 20px;
+}
+
+a{
+    text-decoration: none;
+    color:black;
+}
+p{
+    color: black;
+}
+
+.container{
+    max-width: 1300px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.col-2{
+    flex-basis: 50%;
+    min-width: 300px;
+}
+
+.col-2 img{
+    max-width: 100%;
+    padding: 50px 0;    
+}
+
+.col-2 h1{
+    font-size: 50px;
+    line-height: 60px;
+    margin: 25px 0; 
+}
+
+.btn{
+    display: inline-block;
+    background: orange;
+    color: white;
+    padding: 8px 30px;
+    margin: 30px 0;
+    border-radius: 30px;
+}
+
+.btn:hover{
+    background: blue;
+}
+
+.header{
+    background: radial-gradient(pink,blue);
+}
+.cat{
+    margin-top: 70px 0;
+}
+.col-3{
+    flex-basis: 30px;
+    min-width: 250px;
+    margin-bottom: 30px;
+}
+
+.col-3 img{
+    width: 100%;
+    border-radius: 20px;
+
+}
+
+.small{
+    max-width: 1080px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.title{
+    text-align: center;
+    margin: auto;
+    position: relative;
+    line-height: 60px;
+    color:black;
+}
+h4{
+    color: black;
+    font-weight: normal;
+}
+.col-4{
+    font-size: 14px;
+    line-height: 1%;
+    transition: transform 0.5s;
+}
+.col-4 img{
+    border-radius: 20px;
+}
+.col-4:hover{
+    transform: translate(-5px);
+}
+.btn1{
+    color:green;
+}
+
+.offer{
+    margin-top: 30px;
+    padding: 20px 0;  
+}
+       
+
+.brands{
+    margin: auto;
+}
+.col-5{
+    width: 130px;
+}
+.col-5 img{
+    width: 100px;
+    cursor: pointer;
+    filter: grayscale(100%);
+}
+.col-5 img:hover{
+    filter: grayscale(0);
+}
+
+.footer{
+    background: black;
+    color: white;
+    font-size: 14px;
+    padding: 40px 0;
+    margin-left: -150px;
+    margin-right: -150px;
+ }
+
+ .footer li{
+     list-style: none;
+ }
+
+ .footer p{
+     color:white
+ }
+ .footer h3{
+     color: wheat;
+ }
+
+ .footer-col-1,.footer-col-2,.footer-col-3,.footer-col-4{
+     min-width: 200px;
+     margin-bottom: 20px;
+ }
+ .app-logo{
+     margin-top: 20px;
+ }
+ .app-logo img{
+     width: 140px;
+ }
+
+ .add{
+     margin-left: 40px;
+ }
+
+ .footer hr{
+     border: none;
+     background-color: white;
+     height: 1px;
+     margin: 20px 0;
+ }
+ .hl{
+     text-align: center;
+ }
+ .menu{
+     width: 28px;
+     margin-left: 20px;  
+ }
+
+
+
+ /* product details */
+ .row-2{
+     justify-content: space-between;
+     margin: 100px auto 50px;
+     display: flex;
+    }
+
+    select{
+        border: 1px solid red;
+        padding: 5px;
+        width: 200px;
+        height: 30px;
+        border-radius: 10px;
+    }
+
+    .page{
+        margin: 0 auto 80px;
+    }
+    .page span{
+        display: inline-block;
+        text-align: center;
+        line-height: 40px;
+        cursor: pointer;
+        width: 20px;
+        margin-left: 10px;
+        border-radius: 10px;
+    }
+    .page span:hover{
+        background: blue;
+        color: brown;
+
+    }
+
+
+    .cart-page{
+        margin: 80px auto;
+    }
+
+    table{
+        width: 100%;
+    
+    }
+    .cart-info{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    th{
+        text-align: left;
+        padding: 5px;
+        color: white;
+        background: orange;
+        font-weight: normal
+    }
+    td{
+        padding-top: 5px;
+    }
+    td input{
+        width: 30px;
+        height: 20px;
+        padding: 5px;
+    }
+
+    td a{
+        color: red;
+        font-size: 14px;
+    }
+    td img{
+        width: 80px;
+        height: 80px;
+        margin-right: 10px;
+    }
+
+    .total-price{
+        display: flex;
+        justify-content: flex-end;
+    }
+    .total-price table{
+        border-top: 3px solid orange;
+        width: 100%;
+        max-width: 300px;
+    }
+    td:last-child{
+        text-align: right;
+    }
+    th:last-child{
+        text-align: right;
+    }
+
+    .account{
+        padding-top: 50px;
+        background: radial-gradient(white,pink);
+        
+    }
+
+    .form-container{
+        background: white;
+        width: 300px;
+        height: 400px;
+        position: relative;
+        text-align: center;
+        padding: 20px 0;
+        margin: auto;
+        overflow: hidden;
+    }
+    .form-container span{
+        font-weight: bold;
+        padding-left: 30px;
+        color:black;
+        cursor: pointer;
+        width: 70px;
+        display: inline-block;
+    }
+    .form-btn{
+        display: inline-block;
+    }
+    .form-container form{
+        max-width: 300px;
+        padding: 0 20px;
+        position: absolute;
+        top: 130px;
+        transition: transform 1s;
+
+    }
+    form input{
+        width: 70%;
+        height: 30px;
+        margin: 10px 0; 
+        padding: 0 10px;
+        border: 1px solid black;
+        border-radius: 25px;
+    }
+
+    form .btn{
+        width: 50%;
+        border: none;
+        cursor: pointer;
+        margin: 10px 0;
+    }
+    #Logform{
+        left: -400px;
+    }
+    #Regform{
+        left: 0;
+    }
+    form a{
+        font-size: 12px;
+    }
+    #ind{
+        padding-left: 50px;
+        width: 60px;
+        border: none;
+        background: orange;
+        height: 3px;
+        margin-top: 10px;
+        transform: translate(60px);
+        transition: transform 1s;
+    }

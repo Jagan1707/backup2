@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>www.ecommers.com</title>
+        <link rel="stylesheet" href="style.css">
+       
+    </head>
+    <body>
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <img src="./images/logo.png" width="125"> 
+                </div>
+                <nav>
+                    <ul id="menueItems">
+                        <li><a href="new.html">HOME</a></li>
+                        <li><a href="procduct.html">PRODUCT</a></li>
+                        <li><a href="#">ABOUT</a></li>
+                        <li><a href="account.html">PROFILE</a></li>
+                    </ul>
+                </nav>
+                <a href="cart.html"><img src="./images/cart.png" width="30" height="30"></a>
+                <img src="./images/menu.png" class="menu" onclick="menutoggle">     
+            </div>
+        </div><br><br>
+
+        <div class="account">
+            <div class="container">
+                <div class="row">
+                    <div class="col-2">
+                        <img src="cricket_PNG92.png" width="100%" >
+                    </div>
+                    <div class="col-2">
+                        <div class="form-container">
+                            <div class="form-btn">
+                                <span onclick="login()">Login</span>
+                                <span onclick="register()">Register</span>
+                                <hr id="ind">
+                            </div>
+                            <form id="Logform">
+                                <input type="text" placeholder="UserName">
+                                <input type="password"placeholder="password">
+                                <button type="submit" class="btn">Login</button><br>
+                                    <a href="">Forget password</a>
+                            </form>
+                            
+                            <form id="Regform" action="/api/v1/register" method="post">
+                                <input type="text" placeholder="UserName">
+                                <input type="email" placeholder="Email">
+                                <input type="number" placeholder="MobileNumber">
+                                <input type="password"placeholder="password">
+                                <button type="submit" class="btn">Register</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+         <div class="brands">
+             <div class="small">
+                 <div class="row">
+                     <div class="col-5">
+                         <img src="log-1.png" >
+                     </div>
+                        <div class="col-5">
+                            <img src="log-2.png" >
+                        </div>
+                            <div class="col-5">
+                                <img src="log-3.png" >
+                            </div>
+                                <div class="col-5">
+                                    <img src="log-4.png" >
+                                </div>
+                                    <div class="col-5">
+                                        <img src="upi.webp" >
+                                    </div>
+                                
+                                </div>
+                                </div>
+                             </div>
+
+          <div class="footer">
+              <div class="container">
+                  <div class="row">
+                      <div class="footer-col-1">
+                          <h3>Download our App</h3>
+                          <p>Download APP for Android and IOS mobile phone </p>
+                          <div class="app-logo">
+                              <img src="./images/play-store.png">
+                              <img src="./images/app-store.png">
+                          </div>
+                      </div>
+                      <div class="footer-col-2">
+                        <img src="./images/logo-white.png">
+                        <p>Flipkart Internet Private Limited,Buildings Alyssa, Begonia & Clove Embassy Tech Village, </p>
+                    </div>
+                    <div class="footer-col-3">
+                        <h3 class="add">HELP</h3>
+                        <ul>
+                            <li>payment</li>
+                            <li>shipping</li>
+                            <li>FAQ</li>
+                            <li>cancellation & Return</li>
+                        </ul>
+                    </div>
+                    <div class="footer-col-4">
+                        <h3 class="add">SOCIAL</h3>
+                        <ul>
+                            <li>Facebook</li>
+                            <li>Twitter</li>
+                            <li>Instagram</li>
+                            <li>Youtube</li>
+                        </ul>
+                    </div>
+                  </div>
+                  <hr>
+                  <p class="hl">universal-Store 2022 </p>
+              </div>
+          </div>     
+          
+
+          <script>
+              var logform = document.getElementById("Logform");
+              var Regform = document.getElementById("Regform");
+              var ind = document.getElementById('ind')
+              function register(){
+                  Regform.style.transform = "translatex(0px)";
+                  logform.style.transform = "translatex(0px)";
+                  ind.style.transform = "translatex(80px)";
+              }
+              function login(){
+                Regform.style.transform = "translatex(300px)";
+                logform.style.transform = "translatex(380px)" ;
+                ind.style.transform = "translatex(0px)";        
+              }
+          </script>
+
+
+
+
+
+
+
+
+
+
+                            
+    </body>
+</html>
