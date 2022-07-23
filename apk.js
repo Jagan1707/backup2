@@ -1,6 +1,8 @@
-const router = require('express').Router();
-const braintree = require('braintree');
+const express = require('express')
+const cors = require('cors')
+const app = express();
 require('dotenv').config();
+const braintree = require('braintree');
 
 const config = {
     environment : braintree.Environment.Sandbox,
@@ -11,7 +13,17 @@ const config = {
 
 const gateway = new braintree.BraintreeGateway(config);
 
-router.get("/tokengenete",async(req,res)=>{
+
+app.use(cors({origin:'http://localhost:3000'}));
+app.use(express.json());
+
+app.use(function(req,res,next){
+    res.header('Access-Control-Allow-Orgin','*');
+    res.header('Access-control-Allow-Header',"X-Requested-With");
+    next();
+})
+
+app.get("/tokengenete",async(req,res)=>{
     try {
         gateway.clientToken.generate({},(err,token)=>{
             if(err){
@@ -27,7 +39,7 @@ router.get("/tokengenete",async(req,res)=>{
     }
 });
 
-router.post('/saleTransaction',async(req,res)=>{
+app.post('/saleTransaction',async(req,res)=>{
     try {
         const payment = gateway.transaction.sale({
             amount : req.body.amount,
@@ -35,7 +47,8 @@ router.post('/saleTransaction',async(req,res)=>{
             options : {
                 submitForSettlement : true
             }
-        },(err,data)=>{
+        },
+        (err,data)=>{
             if(err){
                 console.log('err',err.message)
 
@@ -56,4 +69,9 @@ router.post('/saleTransaction',async(req,res)=>{
 
 
 
-module.exports = router
+
+
+app.listen(4000,()=>{
+    console.log('successfully running the port 4000');
+})
+

@@ -1,50 +1,52 @@
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const userSchema = require('../models/user.model')
+const userSchema = require('../models/user.models');
 require('dotenv').config();
 
-function authVerify (req,res,next){
+console.log(process.env.Verify)
+
+function authVerify(req,res,next){
+    try {
+        let token = req.header('token');
+        console.log(token);
+        if(!token){
+            res.json({status:'failure',message : "Unauthorized token"});
+        }
+        const decode = jwt.verify(token,process.env.Verify);
+        console.log("decode",decode);
+        next();
+    } catch (err) {
+        res.json({status:'failure',message:err.message})
+    }
+}
+
+
+
+function isAdmin(req,res,next){
     try {
         let token = req.header("token");
         console.log(token);
         if(!token){
-            return res.json({status: "failure", message: "Unauthorised access"});
+            res.json({status:'failure',message:"Unauthorized token"})
         }
-        const decode = jwt.verify(token, process.env.KEY);
-        console.log('DDECODE');
-        console.log(decode)
-        next();
-    } catch (error) {
-        console.log(error.message)
-        return res.json({status: "failure", message: "Invalid token"})
-    }    
-}
+        const decode = jwt.verify(token,process.env.Verify);
+        console.log('token verify');
+        console.log(decode.uuid);
+        userSchema.findOne({uuid:decode.uuid}).exec().then(data=>{
 
-function isAdmin (req,res,next){
-    try{
-        console.log("verify token");
-        let token = req.header("token")
-        if(!token){
-            return res.json({status: "failure", "message": "Unauthorised access"})
-        }
-        const decode = jwt.verify(token, process.env.KEY);
-        console.log(decode.uuid)
-        userSchema.findOne({uuid : decode.uuid}).exec().then(data=>{
-            console.log(data);
-            if(data.role == "admin"){    
-                console.log("yes he is admin")
+            if(data.role == 'admin') {
+                console.log('yes is Admin')
                 next();
-           }else{
-                return res.json({status: "failure", "message": "Unauthorised access"})
-            }   
+            }else{
+                res.json({status:'failure',message:'Invalid token'})
+            }
         })
-           
-    }catch(error){
-        console.log(error.message)
-        return res.json({status: "failure", message: "Invalid token"})
+    } catch (err) {
+        console.log("error",err.message);
+        res.json({status:'failure',message:err.message})
     }
 }
 
 module.exports = {
- authVerify,isAdmin
+    authVerify,isAdmin
 }
